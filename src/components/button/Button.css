@@ -1,0 +1,96 @@
+.customBtn {
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+  /* font:inherit; */
+}
+
+/* sizes */
+.xs {
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
+.small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.medium {
+  padding: 6px 12px;
+  font: 14px;
+}
+
+.large {
+  font-size: 16px;
+  padding: 6px 18px;
+}
+
+.xlarge {
+  font-size: 18px;
+  padding: 8px 20px;
+}
+/* colors */
+.greenyellow:active{
+  background-color: #4bc00c;
+  color: #eee;
+  cursor: pointer;
+  animation: ripple 2s linear;
+}
+
+.greenyellow:hover {
+  background-color: #4bc00c;
+  color: #eee;
+  cursor: pointer;
+}
+
+.greenyellow{
+  background-color: transparent;
+  color: #4bc00c;
+  border: 2px solid #4bc00c;
+  
+}
+
+.green:hover {
+  background-color: green;
+  color: #eee;
+  cursor: pointer;
+}
+
+.green {
+  background-color: transparent;
+  color: green;
+  border: 2px solid green;
+}
+
+.red:hover {
+  background-color: #da2323;
+  color: #eee;
+  cursor: pointer;
+}
+
+.red {
+  background-color: transparent;
+  color: #da2323;
+  border: 2px solid #da2323;
+}
+
+.blue:hover {
+  background-color: #208dd2;
+  color: #eee;
+  cursor: pointer;
+}
+
+.blue {
+  background-color: transparent;
+  color: #208dd2;
+  border: 2px solid #208dd2;
+}
+
+/* disabled */
+.disabledBtn {
+  background-color: #c6c6c6;
+  cursor: not-allowed;
+  color: #eee;
+}

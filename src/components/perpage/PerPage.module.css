@@ -1,0 +1,67 @@
+.perPageContainer {
+    width: 150px;
+    margin: 0 auto;
+    border: 2px solid #4bc00c;
+    border-radius: 4px;
+    display: flex;
+    background: white;
+}
+
+.label{
+    color: green;
+    padding-left: 4px;
+    padding-top: 5px;
+}
+
+.perPageBox {
+    padding: 4px;
+    font-weight: bold;
+    color: #1f331f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropIcon {
+    color: #4bc00c;
+    transform: scale(1.2);
+    margin-top: 4px;
+}
+
+.selectedPerPage{
+    margin-left: 20px;
+    margin-right: 12px;
+}
+
+.perPageContentOverlay {
+    position: absolute;
+    width: 150px;
+    margin-top: 10px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6px #0000000f;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.perPageContentHidden {
+   display: none;
+}
+
+.dropDownItem {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #1f331f;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    background-color: #fcfcfc;
+}
+
+.dropDownItem:hover {
+    background-color: green;
+    color: #fcfcfc;
+    font-weight: lighter;
+}

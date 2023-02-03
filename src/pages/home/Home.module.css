@@ -1,0 +1,40 @@
+.homeContainer {
+  position: absolute;
+  /* background-color: #d9f7b9; */
+  margin-top: 90vh;
+  height: 100vh;
+  width: 100vw;
+}
+
+.homeText {
+  color: #4bc00c;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 8px auto;
+}
+
+.inputBox {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color:  #1a251a;
+  width: 480px;
+  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+  border-radius: 8px;
+  text-align: center;
+  margin: auto;
+  padding: 15px;
+}
+
+.form {
+  display: grid;
+  gap: 5px;
+  text-align: center;
+}
+
+.submitBtn {
+  margin: 10px 0px;
+  font-size: 16px;
+}

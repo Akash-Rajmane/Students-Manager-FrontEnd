@@ -1,0 +1,41 @@
+.listContainer {
+  position: absolute;
+  /* background-color: #d9f7b9; */
+  margin-top: 90vh;
+  height: 100vh;
+  width: 100vw;
+}
+
+.elementsContainer {
+  padding-top: 10px;
+  padding-bottom: 70px;
+}
+
+.inputBtnBox{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.searchInput{
+  width:300px;
+  height: 30px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.deleteAllBtn{
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.delIcon{
+ vertical-align: middle;
+}
+
+.spinnerContainer {
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}

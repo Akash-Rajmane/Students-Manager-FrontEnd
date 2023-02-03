@@ -1,0 +1,67 @@
+.cardClass {
+    margin: auto;
+    list-style: none;
+    background-color: #1a251a;
+    height: 220px;
+    width: 400px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 10px;
+    color: #9bdc28;
+  }
+
+  .cardClass:hover{
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  
+  .bookMarkIcon {
+    display: block;
+    float: right;
+    margin-right: 25px;
+    margin-top: 4px;
+    color: #9bdc28;
+    transform: scale(3);
+  }
+
+  .cardBody{
+    margin-left: 35px;
+  }
+
+  .name{   
+    text-align: left;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cardData{
+    display: grid;
+    grid-template-columns: 120px 50px;
+    text-align: left;
+    grid-gap: 5px;
+  }
+  
+  .cardFooter {
+    display: flex;
+    text-align: left;
+    margin-left: 35px;
+    gap: 20px;
+    margin-top: 20px;
+    background-color: #1a251a;
+  }
+  
+  .shapeBottom {
+    margin-left: 230px;
+    margin-top: -51px;
+    width: 0; 
+    height: 0; 
+    border-left: 180px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 75px solid #9bdc28;
+  }
+  
+
+  

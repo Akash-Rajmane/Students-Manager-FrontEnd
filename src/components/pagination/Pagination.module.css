@@ -1,0 +1,49 @@
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #4bc00c;
+    border-color:  #4bc00c;
+}
+
+.active {
+    border-color:  #4bc00c;
+    background:  #4bc00c;
+    color: white;
+}
+
+.btn:hover{
+    background-color: green;
+    color: white;
+    border: green;
+}
+
+.left{
+    transform: scale(2);
+    padding-top: 2px;
+}
+
+.right{
+    transform: scale(2);
+    padding-top: 2px;
+}
+
+.btn:disabled {
+    background-color: #c6c6c6;
+    cursor: not-allowed;
+    color: #eee;
+    border: none;
+  }

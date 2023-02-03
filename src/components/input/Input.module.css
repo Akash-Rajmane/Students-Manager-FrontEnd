@@ -1,0 +1,39 @@
+.inputComponent {
+  display: grid;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  width: 250px;
+  height: 25px;
+  margin: 8px 0px;
+  border-radius: 4px;
+  border: 2px solid #8a8989;
+  float: center;
+  outline: none;
+  font: inherit;
+}
+
+input:focus {
+  border: 2px solid #4bc00c;
+}
+
+input:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+}
+
+.error {
+  border: 2px solid #da2323;
+  background-color: #feeae7;
+}
+
+.errorText {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #da2323;
+  text-align: left;
+}

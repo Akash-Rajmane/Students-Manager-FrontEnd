@@ -1,0 +1,8 @@
+.statsContainer {
+  position: absolute;
+  /* background-color: #d9f7b9; */
+  margin-top: 90vh;
+  width: 100vw;
+  padding-bottom: 50px;
+  height: 90vh;
+}

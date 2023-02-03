@@ -1,0 +1,54 @@
+.spin {
+  animation: spin 0.9s linear infinite;
+  transform-origin: center;
+  position: relative;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hourGlassSmall {
+  font-size: 20px;
+}
+
+.hourGlassMed {
+  font-size: 28px;
+}
+
+.hourGlassLarge {
+  font-size: 40px;
+}
+
+.circleSmall {
+  border: 3px solid #e3e1e1;
+  border-radius: 50%;
+  border-top: 3px solid green;
+  width: 10px;
+  height: 10px;
+  animation: spin 2s linear infinite;
+}
+
+.circleMed {
+  border: 5px solid #e3e1e1;
+  border-radius: 50%;
+  border-top: 5px solid green;
+  width: 15px;
+  height: 15px;
+  animation: spin 2s linear infinite;
+}
+
+.circleLarge {
+  border: 8px solid #e3e1e1;
+  border-radius: 50%;
+  border-top: 8px solid green;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
