@@ -1,6 +1,6 @@
 # Students-Manager-FrontEnd
 
-### Technical Stack Used: ReactJS, Typescript, HTML, CSS, React- Router-Dom, NodeJS, ExpressJS, MongoDB
+### Technical Stack Used: ReactJS, Typescript, HTML, SCSS, React- Router-Dom, NodeJS, ExpressJS, MongoDB
 
 ### Features;
 
