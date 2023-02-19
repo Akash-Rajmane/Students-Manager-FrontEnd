@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import classes from './Leaderboard.module.css';
+import classes from './Leaderboard.module.scss';
 import useTitle from '../../hooks/useTitle';
 import useFetch from '../../hooks/useFetch';
 //import DropDown from '../../components/dropdown/DropDown';
@@ -125,23 +125,22 @@ const Leaderboard = () => {
           <Button label="Download" color={'blue'} size={'xlarge'} type={'button'}/>
         </DownloadTableExcel>
       </div>
-      
+
       <div className={classes.paginationBox}>
             <Pagination
-               totalPosts={tableData.length}
-               postsPerPage={selectedPerPage}
-               setCurrentPage={setCurrentPage}
-               currentPage={currentPage}
+              totalPosts={tableData.length}
+              postsPerPage={selectedPerPage}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
             />
-            <div className={classes.perPage}>
-              <PerPage
-                label={"Per Page"}
-                optionsArr={[5, 10, All]}
-                selected={selectedPerPage}
-                setSelected={setSelectedPerPage}
-              />
-            </div>            
+            <PerPage
+              label={"Per Page"}
+              optionsArr={[5, 10, All]}
+              selected={selectedPerPage}
+              setSelected={setSelectedPerPage}
+            />              
       </div>
+
       </div>)
      }
     </div>

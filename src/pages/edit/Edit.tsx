@@ -9,8 +9,15 @@ import Spinner from '../../components/spinner/Spinner';
 
 const Edit = () => {
   useTitle('Students Manager - Home');
-  const [isLoading,setIsLoading] =useState(false);
+  const params = useParams();
+  const rN = params.rollNumber;
+  console.log(rN);
+  const {data,isLoading} = useFetch(`https://students-manager.onrender.com/getStudent/${rN}`); 
+  //console.log(data[0]["name"]);
   let navigate = useNavigate();
+ // const { studentName, studentRollNum, studentAttendace, studentMarks} = data;
+
+  //console.log(studentName, studentRollNum, studentAttendace, studentMarks)
 
   const[name,setName] = useState(""); 
   const[rollNumber,setRollNumber] = useState("");
@@ -22,12 +29,10 @@ const Edit = () => {
   const [attendanceFlag, setAttendanceFlag] = useState(false);
   const [marksFlag, setMarksFlag] = useState(false);
 
-  const params = useParams();
-  const rN = params.rollNumber;
-  console.log(rN);
+ 
   //const [dataChange,setDataChange] = useState(false);
 
- // const {data,isLoading} = useFetch(`https://students-manager.onrender.com/getStudent/${rN}`, dataChange); 
+  
 
  // console.log([...data][0][name]);
 
@@ -85,9 +90,11 @@ const Edit = () => {
     }
 }
 
-useEffect(() => {
-  getStudentData(rN);
-},[rN]);
+
+
+// useEffect(() => {
+//   getStudentData(rN);
+// },[rN]);
 
   const handleEdit = async(e:any) => {
   
