@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import classes from './List.module.css';
+import classes from './List.module.scss';
 import useTitle from '../../hooks/useTitle';
 import Spinner from '../../components/spinner/Spinner';
 import useFetch from '../../hooks/useFetch';
@@ -14,6 +14,8 @@ const Card = React.lazy(() => import('../../components/card/Card'));
 const Button = React.lazy(() => import('../../components/button/Button'));
 const Modal = React.lazy(() => import('../../components/modal/Modal'));
 const Input = React.lazy(() => import('../../components/input/Input'));
+
+const Btn = React.memo(Button);
 
 const List = () => {
   useTitle('Students Manager - List');
@@ -127,9 +129,14 @@ const List = () => {
             type={'text'}
             label={'🔍Search by Name or Roll Number'}
             onChange={(e)=>{setSearchText(e.target.value)}}
-            customClass={classes.searchInput}
+            size={"x-lg"}
           />
-          <Button label={<>Delete All <span className={classes.delIcon}><IoPersonRemove/></span></>} customClass={classes.deleteAllBtn} color={"red"} onClick={()=>setOpen(true)}/>
+          <Btn 
+            label={<div className={classes.btnLabel}><span>Delete All </span> <span className={classes.delIcon}><IoPersonRemove/></span></div>} 
+            color={"red"} 
+            size={'large'}
+            onClick={()=>setOpen(true)}
+          />
           </div>
   
             {sortedData.filter((val:any) => {

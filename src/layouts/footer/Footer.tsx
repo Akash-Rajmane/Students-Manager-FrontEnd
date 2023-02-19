@@ -1,4 +1,4 @@
-import classes from './Footer.module.css';
+import classes from './Footer.module.scss';
 import {BsPeopleFill} from "react-icons/bs";
 
 const Footer = () => {
@@ -8,13 +8,12 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <section className={classes.section}>
-        <div className={classes.themeIcon}><BsPeopleFill/></div>
-        <div>Students Manager</div>
-      </section>
-      <aside className={classes.aside}>
+      <div className={classes.branding}>
+        <span className={classes.themeIcon}><BsPeopleFill/> </span><span>Students Manager</span>
+      </div>
+      <div className={classes.content}>
         {content}
-      </aside>
+      </div>
     </footer>
   );
 };

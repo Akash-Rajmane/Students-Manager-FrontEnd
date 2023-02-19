@@ -1,0 +1,76 @@
+@import "../../styles/variables.scss";
+
+.closeIcon {
+  position: absolute;
+  margin-left: 170px;
+  transform: scale(1.8);
+  color: $txtcolor;
+  font-weight: bolder;
+}
+
+.hamIcon {
+  top: 25px;
+  left: 40px;
+  position: fixed;
+  transform: scale(2);
+  color:$green;
+  z-index: 10;
+  display: block;
+}
+
+
+.nav-menu {
+  width: 240px;
+  background-color: $contentbkg;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 700ms;
+  z-index: 12;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text-container {
+  top: 20px;
+  position: relative;
+}
+
+.nav-text {
+  height: 50px;
+  font: inherit;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: $txtcolor;
+  font-size: 18px;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: $green;
+}
+
+.nav-text a.active {
+  color: $lightgreen;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.spacing {
+  margin-left: 10px;
+}

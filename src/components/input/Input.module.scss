@@ -1,0 +1,50 @@
+@import "../../styles/variables.scss";
+
+.inputComponent {
+  margin: 0;
+  padding: 0;
+  width: max-content;
+}
+
+input {
+  margin: 8px 0px;
+  border-radius: 4px;
+  border: 2px solid $lightgrey;
+  outline: none;
+  height: 25px;
+  font: inherit;
+  &.sm{
+    width: 230px;
+  }
+  
+  &.lg{
+    width: 250px;
+  }
+
+  &.x-lg{
+    width: 280px;
+    height: 30px;
+  }
+}
+
+input:focus {
+  border: 2px solid $greenyellow;
+}
+
+input:disabled {
+  background: $disabledbkg;
+  cursor: not-allowed;
+}
+
+.error {
+  border: 2px solid $red;
+  background-color: $lightredbkg;
+}
+
+.errorText {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: $red;
+  text-align: left;
+}

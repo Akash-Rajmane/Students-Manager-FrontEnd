@@ -1,4 +1,4 @@
-import classes from './Header.module.css';
+import classes from './Header.module.scss';
 import {BsPeopleFill} from "react-icons/bs";
 import MainImage from './main-image.webp';
 

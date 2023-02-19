@@ -1,6 +1,6 @@
 import React from 'react';
 import ModalTypes from "./ModalTypes";
-import classes from "./Modal.module.css";
+import classes from "./Modal.module.scss";
 import { AiFillCloseCircle } from 'react-icons/ai';
 import BackDrop from '../../layouts/backdrop/BackDrop';
 import ReactDOM from "react-dom";

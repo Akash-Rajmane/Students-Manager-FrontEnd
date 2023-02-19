@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-//import Button from '../../components/button/Button';
+import Button from '../../components/button/Button';
 import useTitle from '../../hooks/useTitle';
-import classes from './Home.module.css';
-//import Input from '../../components/input/Input';
-
-const Button = React.lazy(() => import('../../components/button/Button'));
-const Input = React.lazy(() => import('../../components/input/Input'));
+import classes from './Home.module.scss';
+import Input from '../../components/input/Input';
 
 
 const Home = () => {
@@ -47,7 +44,7 @@ const Home = () => {
         return;
       }
 
-      const res = await fetch("https://students-manager.onrender.com/add", {
+      const res = await fetch("http://localhost:8000/add", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -93,6 +90,7 @@ const Home = () => {
             name={'name'}
             errorFlag={nameFlag}
             errorText={"Please enter the valid name"}
+            size={"sm"}
           />
 
           <Input
@@ -103,6 +101,7 @@ const Home = () => {
             name={'rollNumber'}
             errorFlag={rollNumFlag}
             errorText={"Please enter the valid roll number"}
+            size={"sm"}
           />
 
           <Input
@@ -113,6 +112,7 @@ const Home = () => {
             name={'attendance'}
             errorFlag={attendanceFlag}
             errorText={"Please enter the valid attendance data"}
+            size={"sm"}
           />
 
           <Input
@@ -123,6 +123,7 @@ const Home = () => {
             name={'marks'}
             errorFlag={marksFlag}
             errorText={"Please enter the valid marks data"}
+            size={"sm"}
           />
 
           <Button

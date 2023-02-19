@@ -1,0 +1,104 @@
+@import "../../styles/variables.scss";
+
+.customBtn {
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+
+
+/* sizes */
+&.xs {
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
+&.small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+&.medium {
+  padding: 6px 12px;
+  font: 14px;
+}
+
+&.large {
+  font-size: 16px;
+  padding: 6px 18px;
+}
+
+&.xlarge {
+  font-size: 18px;
+  padding: 8px 20px;
+}
+
+/* disabled */
+&.disabledBtn {
+  background-color: $disabledbkg;
+  cursor: not-allowed;
+  color: "black"; 
+  border: 2px solid $disabledbkg;
+}
+
+
+/* colors */
+&.greenyellow:active{
+  background-color: $greenyellow;
+  color: $txtcolor;
+  cursor: pointer;
+  animation: ripple 2s linear;
+}
+
+&.greenyellow:hover {
+  background-color: $greenyellow;
+  color: $txtcolor;
+  cursor: pointer;
+}
+
+&.greenyellow{
+  background-color: transparent;
+  color: $greenyellow;
+  border: 2px solid $greenyellow;
+  
+}
+
+&.green:hover {
+  background-color: $green;
+  color: $txtcolor;
+  cursor: pointer;
+}
+
+&.green {
+  background-color: transparent;
+  color: $green;
+  border: 2px solid $green;
+}
+
+&.red:hover {
+  background-color: $red;
+  color: $txtcolor;
+  cursor: pointer;
+}
+
+&.red {
+  background-color: transparent;
+  color: $red;
+  border: 2px solid $red;
+}
+
+&.blue:hover {
+  background-color: $lightblue;
+  color: $txtcolor;
+  cursor: pointer;
+}
+
+&.blue {
+  background-color: transparent;
+  color: $lightblue;
+  border: 2px solid $lightblue;
+}
+
+
+
+}

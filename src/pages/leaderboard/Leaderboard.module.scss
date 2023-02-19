@@ -1,0 +1,104 @@
+@import "../../styles/variables.scss";
+
+.leaderBoardContainer {
+  position: absolute;
+  margin-top: 90vh;
+  height: 100vh;
+  width: 100vw;
+}
+
+.tableContainer {
+  margin: 15px;
+  display: block;
+  overflow-x: auto;
+}
+
+.table {
+  margin: 0 auto; 
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.th {
+  background-color: $contentbkg;
+  color: $txtcolor;
+  padding: 8px;
+  width: 140px;
+  border: 1px solid $tableborder;
+}
+
+.thRank {
+  background-color: $contentbkg;
+  color: $txtcolor;
+  padding: 8px;
+  width: 100px;
+  border: 1px solid $tableborder;
+}
+
+.thMarks {
+  background-color: $contentbkg;
+  color: $txtcolor;
+  padding: 8px;
+  width: 120px;
+  border: 1px solid $tableborder;
+}
+
+.thName {
+  background-color: $contentbkg;
+  color: $txtcolor;
+  padding: 10px;
+  border: 1px solid $tableborder;
+  max-width: 270px;
+  min-width: 200px;
+}
+
+.td {
+  border: 1px solid $tableborder;
+  height: 22px;
+  padding: 5px;
+  max-width: 270px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.tr:nth-child(odd) {
+  background-color: $lightgreen;
+}
+.tr:hover {
+  background-color: $green;
+  color: white;
+}
+
+.spinnerContainer {
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropDownClass {
+  padding-top: 35px;
+  padding-bottom: 15px;
+}
+
+.downloadBtn{
+ text-align: center;
+}
+
+.paginationBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  padding-bottom: 100px;
+}
+
+
+
+
+

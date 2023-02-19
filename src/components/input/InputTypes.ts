@@ -14,6 +14,7 @@ type InputTypes = {
   disabled?: boolean;
   errorFlag?: boolean;
   errorText?: string;
+  size?: 'sm' | 'lg' | 'x-lg';
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 

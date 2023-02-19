@@ -1,24 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import Button from '../../../components/button/Button';
 import Input from '../../../components/input/Input';
 import PieChart from '../../../components/piechart/PieChart';
-import useFetch from '../../../hooks/useFetch';
-import classes from './PieChartBox.module.css';
-import Spinner from '../../../components/spinner/Spinner';
+//import useFetch from '../../../hooks/useFetch';
+import classes from './PieChartBox.module.scss';
+//import Spinner from '../../../components/spinner/Spinner';
 
-const PieChartBox: React.FC = () => {
-  const { data, isLoading } = useFetch('https://students-manager.onrender.com/getStudentsData');
+type PieTypes = {
+  data: number[]
+  isLoading: boolean
+}
+
+
+
+const PieChartBox: React.FC<PieTypes> = ({data,isLoading}) => {
+  // const { data, isLoading } = useFetch('http://localhost:8000/getStudentsData');
+
+  console.log("pie-chart box called");
+
+  return (
+    <div className={classes.pieBoxContainer}>
+      <PassingPie
+       data={data} isLoading={isLoading}/>
+      <AttendancePie data={data} isLoading={isLoading}/>
+    </div>
+  );
+};
+
+export default PieChartBox;
+
+
+
+
+const PassingPie: React.FC<PieTypes>  = ({data,isLoading}) => {
   const [piePassingData, setPiePassingData] = useState<number[]>();
-  const [pieAttendanceData, setPieAttendanceData] = useState<number[]>();
   const [passingCriteria, setPassingCriteria] = useState("40");
-  const [attendanceCriteria, setAttendanceCriteria] = useState("75");
-  const [flagAttendance, setFlagAttendance] = useState<boolean>(false);
   const [flagPassing, setFlagPassing] = useState<boolean>(false);
-
+  
 
   useEffect(()=>{
     piePassingDataGenerator(data, 40);
-    pieAttendanceDataGenerator(data, 75)
   },[data])
 
   const piePassingDataGenerator = (
@@ -49,6 +70,68 @@ const PieChartBox: React.FC = () => {
     }
   };
 
+  const passingCriteriaHandler = (e: any) => {
+    setPassingCriteria(e.target.value);
+  };
+
+  const onSubmitHandler1 = (e: any) => {
+    e.preventDefault();
+    piePassingDataGenerator(data, passingCriteria);  
+  };
+
+  console.log("passing pie called")
+
+  return (
+    <div className={classes.pieBox}>
+        <PieChart
+          width={250}
+          height={250}
+          labelArr={['Passed Students', 'Failed Students']}
+          pieData={piePassingData}
+          chartTitle={'Passed Students & Failed Students'}
+          customClass={classes.pieChart}
+        />
+        <form className={classes.formBox} onSubmit={onSubmitHandler1}>
+          <label>Passing Criteria</label>
+          <Input
+            type={'number'}
+            value={passingCriteria}
+            onChange={passingCriteriaHandler}
+            errorFlag={flagPassing}
+            errorText={'Please enter the valid passing criteria'}
+            aria-label="passing criteria"
+            size={"sm"}
+          />
+          <Button
+            label={'apply'}
+            type={'submit'}
+            customClass={classes.submitBtn}
+            size={'medium'}
+            onClick={() => piePassingDataGenerator(data, passingCriteria)}
+          />
+        </form>  
+  </div>
+  )
+
+}
+
+
+
+
+
+
+const AttendancePie:React.FC<PieTypes> = ({data,isLoading}) => {
+  const [pieAttendanceData, setPieAttendanceData] = useState<number[]>();
+  const [attendanceCriteria, setAttendanceCriteria] = useState("75");
+  const [flagAttendance, setFlagAttendance] = useState<boolean>(false);
+ 
+
+  useEffect(()=>{
+    pieAttendanceDataGenerator(data, 75)
+  },[data])
+
+ 
+
   const pieAttendanceDataGenerator = (
     data: any,
     attendanceCriteria: any
@@ -77,18 +160,8 @@ const PieChartBox: React.FC = () => {
     }
   };
 
-  const passingCriteriaHandler = (e: any) => {
-    setPassingCriteria(e.target.value);
-  };
-
   const attendanceCriteriaHandler = (e: any) => {
     setAttendanceCriteria(e.target.value);
-  };
-
-  const onSubmitHandler1 = (e: any) => {
-    e.preventDefault();
-    piePassingDataGenerator(data, passingCriteria);
-    
   };
 
   const onSubmitHandler2 = (e: any) => {
@@ -96,71 +169,28 @@ const PieChartBox: React.FC = () => {
     pieAttendanceDataGenerator(data, attendanceCriteria);
   };
 
+  console.log("attendance pie called")
+  
   return (
-    <div className={classes.pieBoxContainer}>
-      <div className={classes.pieBox1}>
-        {isLoading ? (
-          <div className={classes.spinnerContainer}>
-            <Spinner />
-          </div>
-        ) : (
-          <>
+      <div className={classes.pieBox}>
             <PieChart
-              width={260}
-              height={260}
-              labelArr={['Passed Students', 'Failed Students']}
-              pieData={piePassingData}
-              chartTitle={'Passed Students & Failed Students'}
-              customClass={classes.pieChart}
-            />
-            <form className={classes.formBox} onSubmit={onSubmitHandler1}>
-              <div  className={classes.label1}>Passing Criteria</div>
-              <Input
-                type={'number'}
-                customClass={classes.inputContainer}
-                value={passingCriteria}
-                onChange={passingCriteriaHandler}
-                errorFlag={flagPassing}
-                errorText={'Please enter the valid passing criteria'}
-                aria-label="passing criteria"
-              />
-              <Button
-                label={'apply'}
-                type={'submit'}
-                customClass={classes.submitBtn}
-                size={'medium'}
-                onClick={() => piePassingDataGenerator(data, passingCriteria)}
-              />
-            </form>
-          </>
-        )}
-        
-      </div>
-      <div className={classes.pieBox2}>
-        {isLoading ? (
-          <div className={classes.spinnerContainer}>
-            <Spinner />
-          </div>
-        ) : (
-          <>
-            <PieChart
-              width={260}
-              height={260}
+              width={250}
+              height={250}
               labelArr={['Non-defaulters', 'Defaulters']}
               pieData={pieAttendanceData}
               chartTitle={'Attendance Non-defaulters & Defaulters'}
               customClass={classes.pieChart}
             />
             <form className={classes.formBox} onSubmit={onSubmitHandler2}>
-              <div  className={classes.label2}>Attendance Criteria</div>
+              <label>Attendance Criteria</label>
               <Input
                 type={'number'}
-                customClass={classes.inputContainer}
                 value={attendanceCriteria}
                 onChange={attendanceCriteriaHandler}
                 errorFlag={flagAttendance}
                 errorText={'Please enter the valid attendance criteria'}
                 aria-label="attendance criteria"
+                size={"sm"}
               />
               <Button
                 label={'apply'}
@@ -169,12 +199,7 @@ const PieChartBox: React.FC = () => {
                 size={'medium'}
                 onClick={() => pieAttendanceDataGenerator(data, attendanceCriteria)}
               />
-            </form>
-          </>       
-        )}      
+            </form>  
       </div>
-    </div>
-  );
-};
-
-export default PieChartBox;
+  )
+}

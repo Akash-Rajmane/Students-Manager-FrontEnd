@@ -7,6 +7,7 @@ const useBarDataGenerator = (
   C?: string | number
 ) => {
   const [barData, setBarData] = useState([{}]);
+  const [yTickNumber, setYTickNumber] = useState(0);
 
   const barDataGenerator = (
     data: any,
@@ -19,6 +20,7 @@ const useBarDataGenerator = (
     let countC: number = 0;
     let countF: number = 0;
     const marksArray = data.map((el: any) => el.marks);
+
     for (let i = 0; i < marksArray.length; i++) {
       if (marksArray[i] > Number(A)) {
         countA++;
@@ -29,19 +31,21 @@ const useBarDataGenerator = (
       } else {
         countF++;
       }
-      const data = [
-        { Grade: 'A (>80)', Value: countA },
-        { Grade: 'B (>60)', Value: countB },
-        { Grade: 'C (>40)', Value: countC },
-        { Grade: 'F (<40)', Value: countF },
-      ];
-      setBarData(data);
     }
+
+    const result = [
+      { Grade: 'A (>80)', Value: countA },
+      { Grade: 'B (>60)', Value: countB },
+      { Grade: 'C (>40)', Value: countC },
+      { Grade: 'F (<40)', Value: countF },
+    ];
+    setBarData(result);
+    setYTickNumber(Math.max(countA,countB,countC,countF));
   };
   useEffect(() => {
     barDataGenerator(data, A, B, C);
   }, [data, A, B, C]);
-  return [barData];
+  return {barData,yTickNumber};
 };
 
 export default useBarDataGenerator;

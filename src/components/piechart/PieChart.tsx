@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import classes from './PieChart.module.css';
+import classes from './PieChart.module.scss';
 import PieChartTypes from './PieChartTypes';
 import ReactDOM from "react-dom";
 
@@ -15,17 +15,18 @@ const PieChart: React.FC<PieChartTypes> = ({
   showLabels = false,
 }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
+  //const labels = useMemo(()=> labelArr ? labelArr : [],[labelArr]);
 
   useEffect(() => {
     const w = width || 400;
     const h = height || 320;
-    const margin = pieData ? 25 * pieData.length : 0;
+    const margin = 20; 
 
     const svg = d3
       .select(svgRef.current)
       .attr('width', w)
       .attr('height', h)
-      .style('margin-top', margin)
+      .style('margin-top', 10)
       .style('margin-bottom', 10)
       .style('overflow', 'visible');
 
@@ -52,6 +53,8 @@ const PieChart: React.FC<PieChartTypes> = ({
     const labelArray = labelArr || [];
     const pieDataArray = pieData || [];
     const arcStrokeFlag = pieDataArray[1] === 0 ? false : true;
+
+    // console.log(labelArray);
 
     const pie = d3.pie();
 
@@ -110,9 +113,12 @@ const PieChart: React.FC<PieChartTypes> = ({
         .text((d, i) => labelArray[i])
         .attr('class', classes.label);
 
-    svg
-      .selectAll('.mydots')
-      .data(labelArray)
+
+    const legend = svg
+                    .selectAll('.legends')
+                    .data(labelArray);
+
+    legend
       .enter()
       .append('circle')
       .attr('cx', radius / 2)
@@ -122,9 +128,7 @@ const PieChart: React.FC<PieChartTypes> = ({
       .attr('r', 10)
       .style('fill', (d, i) => colorArr[i]);
 
-    svg
-      .selectAll('mylabels')
-      .data(labelArray)
+legend
       .enter()
       .append('text')
       .attr('x', radius / 2 + 25)
@@ -132,9 +136,7 @@ const PieChart: React.FC<PieChartTypes> = ({
         return i * 25 - margin;
       })
       .style('fill', (d, i) => colorArr[i])
-      .text(function (d) {
-        return d;
-      })
+      .text(function(d){ return d;})
       .attr('text-anchor', 'left')
       .style('alignment-baseline', 'middle');
 

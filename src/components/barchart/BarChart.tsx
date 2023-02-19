@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import classes from './BarChart.module.css';
+import classes from './BarChart.module.scss';
 import BarChartTypes from './BarChartTypes';
 
 const BarChart: React.FC<BarChartTypes> = ({
@@ -8,7 +8,6 @@ const BarChart: React.FC<BarChartTypes> = ({
   height,
   chartTitle,
   data,
-  customClass,
   xAxisLabel = 'X Axis',
   xTickNumber = 4,
   xTickFontSize = '12px',
@@ -46,24 +45,24 @@ const BarChart: React.FC<BarChartTypes> = ({
       .style('opacity', 0)
       .attr('class', classes.tooltip);
 
-    // const showTooltip = (event: any, d: any) => {
-    //   tooltip.transition().duration(200);
-    //   tooltip
-    //     .style('opacity', 1)
-    //     .html('Grade: ' + d.Grade + ' , Number of Students: ' + d.Value)
-    //     .style('left', event.pageX + 5 + 'px')
-    //     .style('top', event.pageY - 50 + 'px');
-    // };
+    const showTooltip = (event: any, d: any) => {
+      tooltip.transition().duration(200);
+      tooltip
+        .style('opacity', 1)
+        .html('Grade: ' + d.Grade + ' , Number of Students: ' + d.Value)
+        .style('left', event.pageX + 5 + 'px')
+        .style('top', event.pageY - 50 + 'px');
+    };
 
-    // const moveTooltip = (event: any, d: any) => {
-    //   tooltip
-    //     .style('left', event.pageX  + 5 + 'px')
-    //     .style('top', event.pageY - 50 + 'px');
-    // };
+    const moveTooltip = (event: any, d: any) => {
+      tooltip
+        .style('left', event.pageX  + 5 + 'px')
+        .style('top', event.pageY - 50 + 'px');
+    };
 
-    // const hideTooltip = (event: any, d: any) => {
-    //   tooltip.transition().duration(200).style('opacity', 0);
-    // };
+    const hideTooltip = (event: any, d: any) => {
+      tooltip.transition().duration(200).style('opacity', 0);
+    };
 
     const xScale = d3.scaleBand().range([0, width-margin]).padding(0.5);
     const yScale = d3.scaleLinear().range([height-margin, 0]);
@@ -123,8 +122,8 @@ const BarChart: React.FC<BarChartTypes> = ({
       .attr('y', (d: any) => yScale(d.Value))
       .attr('width', xScale.bandwidth()) 
       .transition()
-      .duration(3000)
-      .delay((d,i:number)=>i*750)
+      .duration(1500)
+      .delay((d,i:number)=>i*300)
       .attr('height', (d: any) => (height-margin) - yScale(d.Value) || 0)     
       .attr('fill', (d: any, i: any) => colorArr[i])
       // .on('mouseover', showTooltip)
@@ -146,11 +145,9 @@ const BarChart: React.FC<BarChartTypes> = ({
     width,
   ]);
   return (
-    <div className={customClass && customClass}>
-       {/* <div className={'toolTipBox'}></div> */}
+    <div className={classes.barChart}>
       {chartTitle && <div className={classes.barChartTitle}>{chartTitle}</div>}
-      <svg ref={svgRef} className={classes.barChart} />
-        
+      <svg ref={svgRef} className={classes.svg}/>
     </div>
   );
 };

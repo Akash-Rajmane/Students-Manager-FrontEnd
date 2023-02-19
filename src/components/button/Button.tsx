@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonTypes from './ButtonTypes';
-import './Button.css';
+import classes from './Button.module.scss';
 
 const Button: React.FC<ButtonTypes> = ({
   label,
@@ -12,9 +12,10 @@ const Button: React.FC<ButtonTypes> = ({
   type,
   ...props
 }) => {
-  const btnClass = `customBtn ${size} ${color} ${disabled && `disabledBtn`} ${
-    customClass && customClass
-  }`;
+  const btnClass = `${classes.customBtn} 
+  ${size==="small"? classes["small"] : size==="large"? classes["large"] : size==="medium"? classes["medium"] : size==="xs"? classes["xs"] : classes["xlarge"]}
+  ${color==="blue"? classes["blue"] : color==="red"?  classes["red"]: color==="green"? classes["green"]: disabled ? classes["disabledBtn"]:classes["greenyellow"] } 
+  ${customClass && customClass}`;
 
   return (
     <div>

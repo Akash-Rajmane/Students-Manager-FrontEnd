@@ -1,0 +1,14 @@
+.statsContainer {
+  position: absolute;
+  margin-top: 90vh;
+  width: 100vw;
+  height: max-content;
+  padding-bottom: 100px;
+}
+
+.spinnerContainer {
+  display: grid;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}

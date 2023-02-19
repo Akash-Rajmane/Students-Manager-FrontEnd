@@ -3,7 +3,6 @@ type BarChartTypes = {
   width: number;
   height: number;
   chartTitle?: string;
-  customClass?: string;
   xAxisLabel?: string;
   xTickNumber?: number;
   xTickFontSize?: string;
