@@ -1,11 +1,10 @@
 import React, {Suspense} from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.scss';
 import Header from '../src/layouts/header/Header';
 import Footer from './layouts/footer/Footer';
 import Sidebar from './layouts/sidebar/Sidebar';
 import Home from './pages/home/Home';
-import Spinner from './components/spinner/Spinner';
+
 
 //import List from './pages/list/List';
 const List = React.lazy(() => import('./pages/list/List'));
@@ -22,7 +21,7 @@ const ScrollToTop = React.lazy(() => import('./components/scrolltotop/ScrollToTo
 function App() {
   
   return (
-    <Suspense fallback={<div className='spinnerBox'><Spinner/></div>}>
+    <Suspense>
     <ScrollToTop> 
       <Header />
       <Sidebar />
