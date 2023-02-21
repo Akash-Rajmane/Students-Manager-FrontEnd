@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Header from '../src/layouts/header/Header';
 import Footer from './layouts/footer/Footer';
 import Sidebar from './layouts/sidebar/Sidebar';

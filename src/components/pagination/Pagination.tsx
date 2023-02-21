@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import classes from "./Pagination.module.css";
+import classes from "./Pagination.module.scss";
 import PaginationTypes from './PaginationTypes';
 import {MdOutlineArrowLeft,MdOutlineArrowRight} from "react-icons/md";
 

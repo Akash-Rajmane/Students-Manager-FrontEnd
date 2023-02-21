@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DropDownTypes from './DropDownTypes';
-import classes from './DropDown.module.css';
+import classes from './DropDown.module.scss';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { TbMinusVertical } from 'react-icons/tb';

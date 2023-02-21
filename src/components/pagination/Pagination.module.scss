@@ -1,9 +1,9 @@
+@import "../../styles/variables.scss";
+
 .pagination {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
 
 .btn {
@@ -15,20 +15,20 @@
     cursor: pointer;
     transition: all 0.3s ease;
     background: transparent;
-    color: #4bc00c;
-    border-color:  #4bc00c;
+    color: $greenyellow;
+    border-color:  $greenyellow;
 }
 
 .active {
-    border-color:  #4bc00c;
-    background:  #4bc00c;
+    border-color:  $greenyellow;
+    background:  $greenyellow;
     color: white;
 }
 
 .btn:hover{
-    background-color: green;
+    background-color: $green;
     color: white;
-    border: green;
+    border: $green;
 }
 
 .left{
@@ -42,8 +42,8 @@
 }
 
 .btn:disabled {
-    background-color: #c6c6c6;
+    background-color: $disabledbkg;
     cursor: not-allowed;
-    color: #eee;
+    color: $txtcolor;
     border: none;
   }

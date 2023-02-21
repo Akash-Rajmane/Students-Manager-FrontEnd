@@ -15,7 +15,7 @@ const PieChart: React.FC<PieChartTypes> = ({
   showLabels = false,
 }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
-  //const labels = useMemo(()=> labelArr ? labelArr : [],[labelArr]);
+ 
 
   useEffect(() => {
     const w = width || 400;
@@ -54,7 +54,7 @@ const PieChart: React.FC<PieChartTypes> = ({
     const pieDataArray = pieData || [];
     const arcStrokeFlag = pieDataArray[1] === 0 ? false : true;
 
-    // console.log(labelArray);
+   
 
     const pie = d3.pie();
 

@@ -15,3 +15,47 @@ $dropdowntxtdark: #1f331f;
 $spinnerwhite: #e3e1e1;
 $tableborder: #ddd;
 
+
+@mixin page-container($height: 100vh){
+    position: absolute;
+    margin-top: 90vh;
+    height: $height;
+    width: 100vw;
+}
+
+@mixin home-text{
+    color: $greenyellow;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 8px auto;
+}
+
+@mixin home-input-box{
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: $contentbkg;
+    width: 380px;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+    border-radius: 8px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+@mixin home-form{
+    display: grid;
+    justify-content: center;
+    gap: 5px;
+    text-align: center;
+}
+
+@mixin spinner-container {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}

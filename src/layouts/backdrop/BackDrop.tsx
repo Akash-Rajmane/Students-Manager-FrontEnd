@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import classes from "./BackDrop.module.css";
+import classes from "./BackDrop.module.scss";
 
 type BackDropTypes ={
     onClick: (e:React.MouseEvent) => void;

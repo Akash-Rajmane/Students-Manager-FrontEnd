@@ -39,30 +39,30 @@ const BarChart: React.FC<BarChartTypes> = ({
     ];
 
     // Add the tooltip
-    const tooltip = d3
-      .select('svg')
-      .append('div')
-      .style('opacity', 0)
-      .attr('class', classes.tooltip);
+    // const tooltip = d3
+    //   .select('svg')
+    //   .append('div')
+    //   .style('opacity', 0)
+    //   .attr('class', classes.tooltip);
 
-    const showTooltip = (event: any, d: any) => {
-      tooltip.transition().duration(200);
-      tooltip
-        .style('opacity', 1)
-        .html('Grade: ' + d.Grade + ' , Number of Students: ' + d.Value)
-        .style('left', event.pageX + 5 + 'px')
-        .style('top', event.pageY - 50 + 'px');
-    };
+    // const showTooltip = (event: any, d: any) => {
+    //   tooltip.transition().duration(200);
+    //   tooltip
+    //     .style('opacity', 1)
+    //     .html('Grade: ' + d.Grade + ' , Number of Students: ' + d.Value)
+    //     .style('left', event.pageX + 5 + 'px')
+    //     .style('top', event.pageY - 50 + 'px');
+    // };
 
-    const moveTooltip = (event: any, d: any) => {
-      tooltip
-        .style('left', event.pageX  + 5 + 'px')
-        .style('top', event.pageY - 50 + 'px');
-    };
+    // const moveTooltip = (event: any, d: any) => {
+    //   tooltip
+    //     .style('left', event.pageX  + 5 + 'px')
+    //     .style('top', event.pageY - 50 + 'px');
+    // };
 
-    const hideTooltip = (event: any, d: any) => {
-      tooltip.transition().duration(200).style('opacity', 0);
-    };
+    // const hideTooltip = (event: any, d: any) => {
+    //   tooltip.transition().duration(200).style('opacity', 0);
+    // };
 
     const xScale = d3.scaleBand().range([0, width-margin]).padding(0.5);
     const yScale = d3.scaleLinear().range([height-margin, 0]);

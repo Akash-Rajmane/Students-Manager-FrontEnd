@@ -1,0 +1,10 @@
+@import "./styles/variables.scss";
+
+.App {
+  text-align: center;
+}
+
+.spinnerBox{
+  @include spinner-container;
+}
+

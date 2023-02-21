@@ -2,17 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import classes from './Leaderboard.module.scss';
 import useTitle from '../../hooks/useTitle';
 import useFetch from '../../hooks/useFetch';
-//import DropDown from '../../components/dropdown/DropDown';
+import DropDown from '../../components/dropdown/DropDown';
 import Spinner from '../../components/spinner/Spinner';
-//import Pagination from '../../components/pagination/Pagination';
-//import PerPage from '../../components/perpage/PerPage';
+import Pagination from '../../components/pagination/Pagination';
+import PerPage from '../../components/perpage/PerPage';
 import { DownloadTableExcel } from 'react-export-table-to-excel';
-//import Button from '../../components/button/Button';
+import Button from '../../components/button/Button';
 
-const Button = React.lazy(() => import('../../components/button/Button'));
-const Pagination = React.lazy(() => import('../../components/pagination/Pagination'));
-const PerPage = React.lazy(() => import('../../components/perpage/PerPage'));
-const DropDown = React.lazy(() => import('../../components/dropdown/DropDown'));
+
 
 
 const Leaderboard = () => {
@@ -64,10 +61,9 @@ const Leaderboard = () => {
   const lastPostIndex = currentPage*selectedPerPage;
   const firstPostIndex = lastPostIndex - selectedPerPage;
   const currentData = tableData.slice(firstPostIndex, lastPostIndex);
-
+  
 
   return (
-  
     
     <div className={classes.leaderBoardContainer}>
       {

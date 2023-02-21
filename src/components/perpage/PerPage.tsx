@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import PerPageTypes from "./PerPageTypes";
-import classes from "./PerPage.module.css";
+import classes from "./PerPage.module.scss";
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 
 

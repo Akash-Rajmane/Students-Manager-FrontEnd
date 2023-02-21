@@ -1,0 +1,105 @@
+@import "../../styles/variables.scss";
+
+.cardClass {
+    margin: 20px auto 25px;
+    list-style: none;
+    background-color: $contentbkg;
+    height: 220px;
+    width: 400px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    color: $lightgreen;
+}
+
+.cardClass:hover{
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+  
+.bookMarkIcon {
+  display: block;
+  float: right;
+  margin-right: 25px;
+  margin-top: 4px;
+  color: $lightgreen;
+  transform: scale(3);
+}
+
+.cardBody{
+  margin-left: 35px;
+}
+
+.name{   
+  text-align: left;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardData{
+  display: grid;
+  grid-template-columns: 120px 50px;
+  text-align: left;
+  grid-gap: 5px;
+}
+
+.cardFooter {
+  display: flex;
+  text-align: left;
+  margin-left: 35px;
+  gap: 20px;
+  margin-top: 20px;
+  background-color: $contentbkg;
+}
+  
+.shapeBottom {
+  margin-left: 230px;
+  margin-top: -51px;
+  width: 0; 
+  height: 0; 
+  border-left: 180px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 75px solid $lightgreen;
+}
+  
+
+  @media screen and (max-width: 400px) {
+    .cardClass {
+      height: 210px;
+      width: 280px;
+    }
+
+    .bookMarkIcon {
+      margin-right: 20px;
+      margin-top: 0px;
+      transform: scale(2.5);
+    }
+
+    .cardBody{
+      margin-left: 25px;
+    }
+
+    .name{
+      font-size: 22px;
+    }
+
+    .cardData{
+      font-size: 14px;
+    }
+
+    .cardFooter {
+      margin-left: 25px;
+      margin-top: 25px;
+    }
+
+    .shapeBottom {
+      margin-left: 150px;
+      margin-top: -24px;
+      border-left: 140px solid transparent;
+      border-right: 0px solid transparent;
+      border-bottom: 50px solid $lightgreen;
+    }
+  }
+
+  

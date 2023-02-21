@@ -1,14 +1,16 @@
+@import "../../styles/variables.scss";
+
 .perPageContainer {
     width: 150px;
     margin: 0 auto;
-    border: 2px solid #4bc00c;
+    border: 2px solid $greenyellow;
     border-radius: 4px;
     display: flex;
     background: white;
 }
 
 .label{
-    color: green;
+    color: $green;
     padding-left: 4px;
     padding-top: 5px;
 }
@@ -16,14 +18,14 @@
 .perPageBox {
     padding: 4px;
     font-weight: bold;
-    color: #1f331f;
+    color: $dropdowntxtdark;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .dropIcon {
-    color: #4bc00c;
+    color: $greenyellow;
     transform: scale(1.2);
     margin-top: 4px;
 }

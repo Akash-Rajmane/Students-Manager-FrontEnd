@@ -1,8 +1,7 @@
+@import "../../styles/variables.scss";
+
 .listContainer {
-  position: absolute;
-  margin-top: 90vh;
-  height: 100vh;
-  width: 100vw;
+  @include page-container;
 }
 
 .elementsContainer {
@@ -27,12 +26,8 @@
 
 .delIcon{
  vertical-align: middle;
-
 }
 
 .spinnerContainer {
-  display: grid;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  @include spinner-container;
 }

@@ -1,7 +1,7 @@
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { RiBookmark3Fill } from "react-icons/ri";
 import CardTypes from './CardTypes';
-import classes from "./Card.module.css";
+import classes from "./Card.module.scss";
 import Button from '../../components/button/Button';
 
 

@@ -1,7 +1,9 @@
+@import "../../styles/variables.scss";
+
 .dropDownContainer {
   width: 250px;
   margin: 0 auto;
-  border: 2px solid #51b23d;
+  border: 2px solid $dropdowntheme;
   border-radius: 4px;
 }
 
@@ -9,7 +11,7 @@
   padding: 6px;
   background: #fcfcfc;
   font-weight: bold;
-  color: #1f331f;
+  color: $dropdowntxtdark;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,18 +25,18 @@
 }
 
 .dropIcon {
-  color: #51b23d;
+  color: $dropdowntheme;
   transform: scale(1.2);
   margin-top: 4px;
 }
 
 .lineIcon {
-  color: grey;
+  color: $lightgrey;
   transform: scale(1.5);
 }
 
 .closeIcon {
-  color: #51b23d;
+  color: $dropdowntheme;
   transform: scale(1.2);
 }
 
@@ -60,7 +62,7 @@
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: #1f331f;
+  color: $dropdowntxtdark;
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
@@ -69,7 +71,7 @@
 }
 
 .dropDownItem:hover {
-  background-color: green;
+  background-color: $green;
   color: #fcfcfc;
   font-weight: lighter;
 }

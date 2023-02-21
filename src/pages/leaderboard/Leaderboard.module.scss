@@ -1,20 +1,16 @@
 @import "../../styles/variables.scss";
 
 .leaderBoardContainer {
-  position: absolute;
-  margin-top: 90vh;
-  height: 100vh;
-  width: 100vw;
+  @include page-container($height: max-content);
 }
 
 .tableContainer {
   margin: 15px;
-  display: block;
   overflow-x: auto;
 }
 
 .table {
-  margin: 0 auto; 
+  margin: 15px auto; 
   border-collapse: collapse;
   text-align: center;
 }
@@ -74,10 +70,7 @@
 }
 
 .spinnerContainer {
-  display: grid;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  @include spinner-container;
 }
 
 .dropDownClass {
@@ -94,7 +87,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  column-gap: 30px;
+  gap: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   padding-bottom: 100px;
 }
 

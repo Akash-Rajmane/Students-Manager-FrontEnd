@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+.homeContainer {
+  @include page-container; 
+}
+  
+  .homeText {
+    @include home-text;
+  }
+  
+  .inputBox {
+    @include home-input-box;
+  }
+  
+  .form {
+    @include home-form;
+  }
+
+  .btnBox{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    margin: 10px 0px;
+  }
+
+.spinnerContainer{
+  @include spinner-container;
+}
+  

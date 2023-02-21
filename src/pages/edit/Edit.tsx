@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../../components/button/Button';
 import useTitle from '../../hooks/useTitle';
-import classes from './Edit.module.css';
+import classes from './Edit.module.scss';
 import Input from '../../components/input/Input';
 import { useNavigate,useParams} from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
@@ -178,6 +178,7 @@ const Edit = () => {
             name={'name'}
             errorFlag={nameFlag}
             //onChange={setData}
+            size={"sm"}
           />
 
           <Input
@@ -189,6 +190,7 @@ const Edit = () => {
             errorFlag={rollNumFlag}
             errorText={"Please enter the valid roll number"}
             //onChange={setData}
+            size={"sm"}
           />
 
           <Input
@@ -200,6 +202,7 @@ const Edit = () => {
             errorFlag={attendanceFlag}
             errorText={"Please enter the valid attendance data"}
            // onChange={setData}
+           size={"sm"}
           />
 
           <Input
@@ -211,6 +214,7 @@ const Edit = () => {
             errorFlag={marksFlag}
             errorText={"Please enter the valid marks data"}
             //onChange={setData}
+            size={"sm"}
           />
         <div className={classes.btnBox}>
             <Button

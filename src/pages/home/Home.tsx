@@ -44,7 +44,7 @@ const Home = () => {
         return;
       }
 
-      const res = await fetch("http://localhost:8000/add", {
+      const res = await fetch("https://students-manager.onrender.com/add", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -55,7 +55,7 @@ const Home = () => {
       });
 
       const resData = await res.json();
-      //console.log(resData);
+     
 
       if (res.status === 422 || !resData) {
           alert("Something went wrong!");
