@@ -7,7 +7,7 @@ const useBarDataGenerator = (
   C?: string | number
 ) => {
   const [barData, setBarData] = useState([{}]);
-  const [yTickNumber, setYTickNumber] = useState(0);
+  const [vTickNumber, setVTickNumber] = useState(0);
 
   const barDataGenerator = (
     data: any,
@@ -40,12 +40,12 @@ const useBarDataGenerator = (
       { Grade: 'F (<40)', Value: countF },
     ];
     setBarData(result);
-    setYTickNumber(Math.max(countA,countB,countC,countF));
+    setVTickNumber(Math.max(countA,countB,countC,countF));
   };
   useEffect(() => {
     barDataGenerator(data, A, B, C);
   }, [data, A, B, C]);
-  return {barData,yTickNumber};
+  return {barData,vTickNumber};
 };
 
 export default useBarDataGenerator;

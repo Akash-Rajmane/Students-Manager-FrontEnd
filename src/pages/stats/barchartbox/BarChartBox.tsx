@@ -12,7 +12,7 @@ type PropTypes = {
 
 const BarChartBox:React.FC<PropTypes> = ({data}) => {
   //const { data, isLoading } = useFetch('http://localhost:8000/getStudentsData');
-  const {barData, yTickNumber} = useBarDataGenerator(data);
+  const {barData, vTickNumber} = useBarDataGenerator(data);
   
   return (
     <div className={classes.barChartBox}>
@@ -21,7 +21,7 @@ const BarChartBox:React.FC<PropTypes> = ({data}) => {
         width={600}
         height={460}
         chartTitle={'Grades vs Number of Students'}
-        yTickNumber={yTickNumber}
+        vTickNumber={vTickNumber}
       />   
     </div>
   );
