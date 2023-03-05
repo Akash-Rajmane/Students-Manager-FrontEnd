@@ -12,7 +12,6 @@ type BarChartTypes = {
 };
 
 
-
 const BarChart: React.FC<BarChartTypes> = ({
   width,
   height,
@@ -37,10 +36,7 @@ const BarChart: React.FC<BarChartTypes> = ({
       'indigo',
       'gold',
       'steelblue',
-      'red',
-      'greenyellow',
-      'orange',
-      'slategrey',
+      'red'
     ];
 
 
