@@ -174,8 +174,7 @@ const Edit = () => {
             type={'text'}
             label={'Name'}
             value={name}
-            onChange={(e)=>{setName(e.target.value)}}
-            name={'name'}
+            onChange={(e)=>{setName(e.target.value)}} 
             //onChange={setData}
             size={"sm"}
           />
@@ -184,8 +183,7 @@ const Edit = () => {
             type={'text'}
             label={'Roll Number'}
             value={rollNumber}
-            onChange={(e)=>{setRollNumber(e.target.value)}}
-            name={'rollNumber'}
+            onChange={(e)=>{setRollNumber(e.target.value)}}  
             //onChange={setData}
             size={"sm"}
           />
@@ -195,7 +193,6 @@ const Edit = () => {
             label={'Attendance'}
             value={attendance}
             onChange={(e)=>{setAttendance(e.target.value)}}
-            name={'attendance'}
            // onChange={setData}
            size={"sm"}
           />
@@ -205,7 +202,6 @@ const Edit = () => {
             label={'Marks'}
             value={marks}
             onChange={(e)=>{setMarks(e.target.value)}}
-            name={'marks'}
             //onChange={setData}
             size={"sm"}
           />
