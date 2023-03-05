@@ -176,7 +176,6 @@ const Edit = () => {
             value={name}
             onChange={(e)=>{setName(e.target.value)}}
             name={'name'}
-            errorFlag={nameFlag}
             //onChange={setData}
             size={"sm"}
           />
@@ -187,8 +186,6 @@ const Edit = () => {
             value={rollNumber}
             onChange={(e)=>{setRollNumber(e.target.value)}}
             name={'rollNumber'}
-            errorFlag={rollNumFlag}
-            errorText={"Please enter the valid roll number"}
             //onChange={setData}
             size={"sm"}
           />
@@ -199,8 +196,6 @@ const Edit = () => {
             value={attendance}
             onChange={(e)=>{setAttendance(e.target.value)}}
             name={'attendance'}
-            errorFlag={attendanceFlag}
-            errorText={"Please enter the valid attendance data"}
            // onChange={setData}
            size={"sm"}
           />
@@ -211,8 +206,6 @@ const Edit = () => {
             value={marks}
             onChange={(e)=>{setMarks(e.target.value)}}
             name={'marks'}
-            errorFlag={marksFlag}
-            errorText={"Please enter the valid marks data"}
             //onChange={setData}
             size={"sm"}
           />
@@ -220,7 +213,6 @@ const Edit = () => {
             <Button
                 label={'Update'}
                 type={'submit'}
-                customClass={classes.submitBtn}
                 size={'large'}
                 onClick={(rollNumber)=>handleEdit(rollNumber)}
             />
@@ -228,7 +220,6 @@ const Edit = () => {
             label={"Cancel"}
             type={"button"}
             color={"red"}
-            customClass={classes.cancelBtn}
             size={"large"}
             onClick={cancelHandler}
             />

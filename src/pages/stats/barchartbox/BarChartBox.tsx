@@ -10,7 +10,7 @@ type PropTypes = {
   isLoading: boolean
 }
 
-const BarChartBox:React.FC<PropTypes> = ({data,isLoading}) => {
+const BarChartBox:React.FC<PropTypes> = ({data}) => {
   //const { data, isLoading } = useFetch('http://localhost:8000/getStudentsData');
   const {barData, yTickNumber} = useBarDataGenerator(data);
   
@@ -20,8 +20,6 @@ const BarChartBox:React.FC<PropTypes> = ({data,isLoading}) => {
         data={barData}
         width={600}
         height={460}
-        xAxisLabel={'Grades'}
-        yAxisLabel={'Number of Students'}
         chartTitle={'Grades vs Number of Students'}
         yTickNumber={yTickNumber}
       />   

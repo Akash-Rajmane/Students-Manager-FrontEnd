@@ -8,18 +8,16 @@ const Button: React.FC<ButtonTypes> = ({
   color,
   onClick,
   disabled,
-  customClass,
   type,
-  ...props
 }) => {
   const btnClass = `${classes.customBtn} 
   ${size==="small"? classes["small"] : size==="large"? classes["large"] : size==="medium"? classes["medium"] : size==="xs"? classes["xs"] : classes["xlarge"]}
   ${color==="blue"? classes["blue"] : color==="red"?  classes["red"]: color==="green"? classes["green"]: disabled ? classes["disabledBtn"]:classes["greenyellow"] } 
-  ${customClass && customClass}`;
+ `;
 
   return (
     <div>
-      <button onClick={onClick} className={btnClass} type={type} {...props}>
+      <button onClick={onClick} className={btnClass} type={type} >
         {label}
       </button>
     </div>

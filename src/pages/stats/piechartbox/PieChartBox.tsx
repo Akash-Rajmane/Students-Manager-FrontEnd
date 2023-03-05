@@ -97,15 +97,12 @@ const PassingPie: React.FC<PieTypes>  = ({data,isLoading}) => {
             type={'number'}
             value={passingCriteria}
             onChange={passingCriteriaHandler}
-            errorFlag={flagPassing}
-            errorText={'Please enter the valid passing criteria'}
             aria-label="passing criteria"
             size={"sm"}
           />
           <Button
             label={'apply'}
             type={'submit'}
-            customClass={classes.submitBtn}
             size={'medium'}
             onClick={() => piePassingDataGenerator(data, passingCriteria)}
           />
@@ -186,16 +183,13 @@ const AttendancePie:React.FC<PieTypes> = ({data,isLoading}) => {
               <Input
                 type={'number'}
                 value={attendanceCriteria}
-                onChange={attendanceCriteriaHandler}
-                errorFlag={flagAttendance}
-                errorText={'Please enter the valid attendance criteria'}
+                onChange={attendanceCriteriaHandler}    
                 aria-label="attendance criteria"
                 size={"sm"}
               />
               <Button
                 label={'apply'}
                 type={'submit'}
-                customClass={classes.submitBtn}
                 size={'medium'}
                 onClick={() => pieAttendanceDataGenerator(data, attendanceCriteria)}
               />

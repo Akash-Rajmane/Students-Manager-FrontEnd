@@ -1,8 +1,7 @@
 type ButtonTypes = {
-  label: string | JSX.Element;
+  label: string;
   size?: 'xs' | 'small' | 'medium' | 'large' | 'xlarge';
   color?: 'greenyellow' |'green' | 'red' | 'blue';
-  customClass?: string;
   type?: 'button' | 'submit' | 'reset';
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;

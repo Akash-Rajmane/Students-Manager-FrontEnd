@@ -8,13 +8,8 @@ const BarChart: React.FC<BarChartTypes> = ({
   height,
   chartTitle,
   data,
-  xAxisLabel = 'X Axis',
   xTickNumber = 4,
-  xTickFontSize = '12px',
-  yAxisLabel = 'Y Axis',
   yTickNumber = 12,
-  yTickFontSize = '12px',
-  yFormat = 'd',
 }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
 
@@ -38,31 +33,6 @@ const BarChart: React.FC<BarChartTypes> = ({
       'slategrey',
     ];
 
-    // Add the tooltip
-    // const tooltip = d3
-    //   .select('svg')
-    //   .append('div')
-    //   .style('opacity', 0)
-    //   .attr('class', classes.tooltip);
-
-    // const showTooltip = (event: any, d: any) => {
-    //   tooltip.transition().duration(200);
-    //   tooltip
-    //     .style('opacity', 1)
-    //     .html('Grade: ' + d.Grade + ' , Number of Students: ' + d.Value)
-    //     .style('left', event.pageX + 5 + 'px')
-    //     .style('top', event.pageY - 50 + 'px');
-    // };
-
-    // const moveTooltip = (event: any, d: any) => {
-    //   tooltip
-    //     .style('left', event.pageX  + 5 + 'px')
-    //     .style('top', event.pageY - 50 + 'px');
-    // };
-
-    // const hideTooltip = (event: any, d: any) => {
-    //   tooltip.transition().duration(200).style('opacity', 0);
-    // };
 
     const xScale = d3.scaleBand().range([0, width-margin]).padding(0.5);
     const yScale = d3.scaleLinear().range([height-margin, 0]);
@@ -75,7 +45,7 @@ const BarChart: React.FC<BarChartTypes> = ({
 
     g.append('g')
       .attr('transform', 'translate(0,' + (height-margin) + ')')
-      .style('font-size', xTickFontSize)
+      .style('font-size', "12px")
       .style('stroke', 'grey')
       .call(d3.axisBottom(xScale).ticks(xTickNumber).tickSize(0))
       .append('text')
@@ -85,17 +55,17 @@ const BarChart: React.FC<BarChartTypes> = ({
       .attr('fill', 'green')
       .attr('font-size', '16px')
       .attr('font-family', 'Poppins')
-      .text(xAxisLabel)
+      .text("Grades");
 
     g.append('g')
       .attr('transform', 'translate(0,0)')
-      .style('font-size', yTickFontSize)
+      .style('font-size', "12px")
       .style('stroke', 'grey')
       .attr("class", "grid")
       .call(
         d3
           .axisLeft(yScale)
-          .tickFormat(d3.format(yFormat ? yFormat : 'd'))
+          .tickFormat(d3.format('d'))
           .ticks(yTickNumber)
           .tickSize(-width)
           .tickSizeOuter(0)
@@ -108,7 +78,7 @@ const BarChart: React.FC<BarChartTypes> = ({
       .attr('fill', 'green')
       .attr('font-size', '16px')
       .attr('font-family', 'Poppins')
-      .text(yAxisLabel);
+      .text("Number of Students");
 
     
 
@@ -126,21 +96,13 @@ const BarChart: React.FC<BarChartTypes> = ({
       .delay((d,i:number)=>i*300)
       .attr('height', (d: any) => (height-margin) - yScale(d.Value) || 0)     
       .attr('fill', (d: any, i: any) => colorArr[i])
-      // .on('mouseover', showTooltip)
-      // .on('mousemove', moveTooltip)
-      // .on('mouseleave', hideTooltip);
 
 
 
   }, [
     data,
-    xAxisLabel,
-    yAxisLabel,
-    xTickFontSize,
-    yTickFontSize,
     xTickNumber,
     yTickNumber,
-    yFormat,
     height,
     width,
   ]);

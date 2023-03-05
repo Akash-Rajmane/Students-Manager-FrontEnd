@@ -87,9 +87,7 @@ const Home = () => {
             label={'Name'}
             value={name}
             onChange={(e)=>{setName(e.target.value)}}
-            name={'name'}
-            errorFlag={nameFlag}
-            errorText={"Please enter the valid name"}
+            name={'name'}  
             size={"sm"}
           />
 
@@ -99,8 +97,6 @@ const Home = () => {
             value={rollNumber}
             onChange={(e)=>{setRollNumber(e.target.value)}}
             name={'rollNumber'}
-            errorFlag={rollNumFlag}
-            errorText={"Please enter the valid roll number"}
             size={"sm"}
           />
 
@@ -110,8 +106,6 @@ const Home = () => {
             value={attendance}
             onChange={(e)=>{setAttendance(e.target.value)}}
             name={'attendance'}
-            errorFlag={attendanceFlag}
-            errorText={"Please enter the valid attendance data"}
             size={"sm"}
           />
 
@@ -121,15 +115,12 @@ const Home = () => {
             value={marks}
             onChange={(e)=>{setMarks(e.target.value)}}
             name={'marks'}
-            errorFlag={marksFlag}
-            errorText={"Please enter the valid marks data"}
             size={"sm"}
           />
 
           <Button
             label={'Add Student'}
             type={'submit'}
-            customClass={classes.submitBtn}
             size={'large'}
             onClick={handleClick}
           />

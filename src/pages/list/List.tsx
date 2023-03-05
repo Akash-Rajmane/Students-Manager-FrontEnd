@@ -8,7 +8,7 @@ import useFetch from '../../hooks/useFetch';
 import { useNavigate } from 'react-router-dom';
 //import Modal from '../../components/modal/Modal';
 //import Button from '../../components/button/Button';
-import { IoPersonRemove } from 'react-icons/io5';
+
 
 const Card = React.lazy(() => import('../../components/card/Card'));
 const Button = React.lazy(() => import('../../components/button/Button'));
@@ -132,7 +132,7 @@ const List = () => {
             size={"x-lg"}
           />
           <Btn 
-            label={<div className={classes.btnLabel}><span>Delete All </span> <span className={classes.delIcon}><IoPersonRemove/></span></div>} 
+            label={"Delete All"} 
             color={"red"} 
             size={'large'}
             onClick={()=>setOpen(true)}
@@ -149,13 +149,6 @@ const List = () => {
                                                                           return (
                                                                             <div key={index} >
                                                                               <Card 
-                                                                              //   styleOverride={
-                                                                              //     {
-                                                                              //       cardClass:{
-                                                                              //       "color":"red"
-                                                                              //       }
-                                                                              //     }
-                                                                              // }
                                                                                 name={name}
                                                                                 rollNumber={rollNumber}
                                                                                 attendance={attendance}

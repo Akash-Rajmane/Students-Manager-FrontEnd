@@ -11,8 +11,7 @@ const PieChart: React.FC<PieChartTypes> = ({
   height,
   labelArr,
   pieData,
-  customClass,
-  showLabels = false,
+  customClass
 }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
  
@@ -106,13 +105,6 @@ const PieChart: React.FC<PieChartTypes> = ({
       .on('mousemove', moveTooltip)
       .on('mouseleave', hideTooltip);
 
-    showLabels &&
-      arcs
-        .append('text')
-        .attr('transform', (d: any) => 'translate(' + label.centroid(d) + ')')
-        .text((d, i) => labelArray[i])
-        .attr('class', classes.label);
-
 
     const legend = svg
                     .selectAll('.legends')
@@ -140,7 +132,7 @@ legend
       .attr('text-anchor', 'left')
       .style('alignment-baseline', 'middle');
 
-  }, [width, height, labelArr, pieData, showLabels]);
+  }, [width, height, labelArr, pieData]);
   
   return (
     <div className={customClass && customClass}>
