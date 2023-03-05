@@ -86,8 +86,7 @@ const Home = () => {
             type={'text'}
             label={'Name'}
             value={name}
-            onChange={(e)=>{setName(e.target.value)}}
-            name={'name'}  
+            onChange={(e)=>{setName(e.target.value)}}       
             size={"sm"}
           />
 
@@ -95,8 +94,7 @@ const Home = () => {
             type={'text'}
             label={'Roll Number'}
             value={rollNumber}
-            onChange={(e)=>{setRollNumber(e.target.value)}}
-            name={'rollNumber'}
+            onChange={(e)=>{setRollNumber(e.target.value)}}    
             size={"sm"}
           />
 
@@ -104,8 +102,7 @@ const Home = () => {
             type={'text'}
             label={'Attendance'}
             value={attendance}
-            onChange={(e)=>{setAttendance(e.target.value)}}
-            name={'attendance'}
+            onChange={(e)=>{setAttendance(e.target.value)}}        
             size={"sm"}
           />
 
@@ -114,7 +111,6 @@ const Home = () => {
             label={'Marks'}
             value={marks}
             onChange={(e)=>{setMarks(e.target.value)}}
-            name={'marks'}
             size={"sm"}
           />
 
