@@ -1,9 +1,9 @@
 @import "../../styles/variables.scss";
 
-.closeIcon {
+.sb-closeIcon {
   position: absolute;
   margin-left: 170px;
-  transform: scale(1.8);
+  transform: scale(2);
   color: $txtcolor;
   font-weight: bolder;
 }
@@ -35,6 +35,7 @@
 .nav-menu.active {
   left: 0;
   transition: 350ms;
+  background-color: $contentbkg;
 }
 
 .nav-text-container {
@@ -65,12 +66,13 @@
 
 .nav-text a.active {
   color: $lightgreen;
+  background-color: $contentbkg;
 }
 
 .nav-menu-items {
   width: 100%;
 }
 
-.spacing {
+.sb-spacing {
   margin-left: 10px;
 }

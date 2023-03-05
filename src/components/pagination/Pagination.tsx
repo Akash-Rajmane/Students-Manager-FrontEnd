@@ -1,7 +1,13 @@
 import React,{useState,useEffect} from 'react';
-import classes from "./Pagination.module.scss";
-import PaginationTypes from './PaginationTypes';
+import "./Pagination.scss";
 import {MdOutlineArrowLeft,MdOutlineArrowRight} from "react-icons/md";
+
+type PaginationTypes = {
+    totalPosts:number;
+    postsPerPage:number;
+    setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+    currentPage:number;
+}
 
 const Pagination:React.FC<PaginationTypes> = ({
     totalPosts,
@@ -40,11 +46,11 @@ const Pagination:React.FC<PaginationTypes> = ({
  
 
   return (
-    <div className={classes.pagination}>
-        <button  aria-label="previous page" className={classes.btn} disabled={prevDisable} onClick={() => setCurrentPage(currentPage-1)}><MdOutlineArrowLeft className={classes.left} /></button>
+    <div className={"pagination"}>
+        <button  aria-label="previous page" className={"btn"} disabled={prevDisable} onClick={() => setCurrentPage(currentPage-1)}><MdOutlineArrowLeft className={"left"} /></button>
          {pages.map((page:any, index:number) => {
-             const btnClass = `${page===currentPage && classes.active} ${
-                classes.btn
+             const btnClass = `${page===currentPage && "active"} ${
+                "btn"
               }`;
                 return (
                     <button
@@ -55,7 +61,7 @@ const Pagination:React.FC<PaginationTypes> = ({
                     </button>
                 );
             })}
-        <button  aria-label="next page" className={classes.btn} disabled={nextDisable}  onClick={() => setCurrentPage(currentPage+1)}><MdOutlineArrowRight className={classes.right}  /></button>
+        <button  aria-label="next page" className={"btn"} disabled={nextDisable}  onClick={() => setCurrentPage(currentPage+1)}><MdOutlineArrowRight className={"right"}/></button>
     </div>
   )
 }

@@ -13,28 +13,19 @@ input {
   outline: none;
   height: 25px;
   font: inherit;
-  &.sm{
-    width: 230px;
-  }
-  
-  &.lg{
-    width: 250px;
-  }
-
-  &.x-lg{
-    width: 280px;
-    height: 30px;
-  }
 }
 
-input:focus {
-  border: 2px solid $greenyellow;
+.sm{
+  width: 230px;
 }
 
-input:disabled {
-  background: $disabledbkg;
-  cursor: not-allowed;
+.lg{
+  width: 250px;
 }
 
+.x-lg{
+  width: 280px;
+  height: 30px;
+}
 
 

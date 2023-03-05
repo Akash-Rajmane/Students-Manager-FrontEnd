@@ -1,6 +1,13 @@
-import React,{useState,useEffect} from 'react';
-import InputTypes from './InputTypes';
-import classes from './Input.module.scss';
+import React from 'react';
+import './Input.scss';
+
+type InputTypes = {
+  label?: string;
+  type: string;
+  value?: string;
+  size?: 'sm' | 'lg' | 'x-lg';
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
 const Input: React.FC<InputTypes> = ({
   label,
@@ -11,12 +18,11 @@ const Input: React.FC<InputTypes> = ({
 }) => {
  
 
-  const inputClass = `${size==="sm"? classes["sm"]: size==="x-lg"? classes["x-lg"]: classes["lg"]}`;
+  const inputClass = `${size==="sm"? "sm": size==="x-lg"? "x-lg": "lg"}`;
   
- 
   
   return (
-    <div className={`${classes.inputComponent} `}>
+    <div className={"inputComponent"}>
       <input
         className={inputClass}
         placeholder={label && label}

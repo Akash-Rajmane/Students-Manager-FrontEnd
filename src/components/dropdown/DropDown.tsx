@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
-import DropDownTypes from './DropDownTypes';
-import classes from './DropDown.module.scss';
+import  './DropDown.scss';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { TbMinusVertical } from 'react-icons/tb';
+
+type DropDownTypes = {
+  label: string;
+  optionsArr: string[];
+  selected: string;
+  setSelected: React.Dispatch<React.SetStateAction<string>> ;
+  customClass?: string;
+};
 
 const DropDown: React.FC<DropDownTypes> = ({
   label,
@@ -14,20 +21,20 @@ const DropDown: React.FC<DropDownTypes> = ({
 }) => {
   const [isActive, setIsAcive] = useState<boolean>(false);
   const dropDownContentClass = isActive
-    ? classes.dropDownContentOverlay
-    : classes.dropDownContentHidden;
+    ? "dropDownContentOverlay"
+    : "dropDownContentHidden";
 
   return (
     <div className={customClass && customClass}>
-      <div className={classes.dropDownContainer}>
-        <div className={classes.dropDownBox}  onClick={(e) => {
+      <div className={"dropDownContainer"}>
+        <div className={"dropDownBox"}  onClick={(e) => {
               !selected && setIsAcive(!isActive);
             }}>
           {selected ? selected : label}
           {selected && (
-            <div className={classes.icons} >
+            <div className={"icons"} >
               <span
-                className={classes.closeIcon}
+                className={"closeIcon"}
                 onClick={() => {
                   setSelected('');
                   setIsAcive(false);
@@ -35,13 +42,13 @@ const DropDown: React.FC<DropDownTypes> = ({
               >
                 <AiFillCloseCircle />
               </span>
-              <span className={classes.lineIcon}>
+              <span className={"lineIcon"}>
                 <TbMinusVertical />
               </span>
             </div>
           )}
           <span
-            className={classes.dropIcon}
+            className={"dropIcon"}
             onClick={(e) => {
               setIsAcive(!isActive);
             }}
@@ -60,7 +67,7 @@ const DropDown: React.FC<DropDownTypes> = ({
                   setSelected(option);
                   setIsAcive(false);
                 }}
-                className={classes.dropDownItem}
+                className={"dropDownItem"}
               >
                 {option}
               </div>

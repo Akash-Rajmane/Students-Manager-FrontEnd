@@ -1,33 +1,38 @@
 import React from 'react';
-import { SpinnerTypes } from './SpinnerTypes';
-import classes from './Spinner.module.css';
+import './Spinner.css';
+
+type SpinnerTypes = {
+  type?: 'circle' | 'hourGlass';
+  size?: 'small' | 'medium' | 'large';
+  customClass?: string;
+};
 
 const Spinner: React.FC<SpinnerTypes> = ({ size, type, customClass }) => {
   return (
     <div className={customClass && customClass}>
       {type === 'hourGlass' ? (
-        <div className={classes.spin}>
+        <div className={"spin"}>
           <div
             className={
               size === 'small'
-                ? classes.hourGlassSmall
+                ? "hourGlassSmall"
                 : size === 'medium'
-                ? classes.hourGlassMed
-                : classes.hourGlassLarge
+                ? "hourGlassMed"
+                : "hourGlassLarge"
             }
           >
             ⌛
           </div>
         </div>
       ) : (
-        <div className={classes.spin}>
+        <div className={"spin"}>
           <div
             className={
               size === 'small'
-                ? classes.circleSmall
+                ? "circleSmall"
                 : size === 'medium'
-                ? classes.circleMed
-                : classes.circleLarge
+                ? "circleMed"
+                : "circleLarge"
             }
           >
           </div>

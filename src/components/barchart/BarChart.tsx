@@ -1,15 +1,25 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import classes from './BarChart.module.scss';
-import BarChartTypes from './BarChartTypes';
+import './BarChart.scss';
+
+type BarChartTypes = {
+  data: {}[];
+  width: number;
+  height: number;
+  chartTitle?: string;
+  hTickNumber?: number;
+  vTickNumber?: number;
+};
+
+
 
 const BarChart: React.FC<BarChartTypes> = ({
   width,
   height,
   chartTitle,
   data,
-  xTickNumber = 4,
-  yTickNumber = 12,
+  hTickNumber,
+  vTickNumber 
 }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
 
@@ -47,7 +57,7 @@ const BarChart: React.FC<BarChartTypes> = ({
       .attr('transform', 'translate(0,' + (height-margin) + ')')
       .style('font-size', "12px")
       .style('stroke', 'grey')
-      .call(d3.axisBottom(xScale).ticks(xTickNumber).tickSize(0))
+      .call(d3.axisBottom(xScale).ticks(hTickNumber).tickSize(0))
       .append('text')
       .attr('y', 40)
       .attr('x', (width-margin) / 2)
@@ -66,7 +76,7 @@ const BarChart: React.FC<BarChartTypes> = ({
         d3
           .axisLeft(yScale)
           .tickFormat(d3.format('d'))
-          .ticks(yTickNumber)
+          .ticks(vTickNumber)
           .tickSize(-width)
           .tickSizeOuter(0)
       )
@@ -101,17 +111,23 @@ const BarChart: React.FC<BarChartTypes> = ({
 
   }, [
     data,
-    xTickNumber,
-    yTickNumber,
+    hTickNumber,
+    vTickNumber,
     height,
     width,
   ]);
+  
   return (
-    <div className={classes.barChart}>
-      {chartTitle && <div className={classes.barChartTitle}>{chartTitle}</div>}
-      <svg ref={svgRef} className={classes.svg}/>
+    <div className={"barChart"}>
+      {chartTitle && <div className={"barChartTitle"}>{chartTitle}</div>}
+      <svg ref={svgRef} className={"svg"}/>
     </div>
   );
 };
 
 export default BarChart;
+
+BarChart.defaultProps = {
+  hTickNumber : 4,
+  vTickNumber : 12
+};

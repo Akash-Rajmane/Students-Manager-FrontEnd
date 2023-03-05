@@ -1,8 +1,16 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import classes from './PieChart.module.scss';
-import PieChartTypes from './PieChartTypes';
+import './PieChart.scss';
 import ReactDOM from "react-dom";
+
+type PieChartTypes = {
+  chartTitle?: string;
+  customClass?: string;
+  width?: number;
+  height?: number;
+  labelArr?: string[];
+  pieData?: number[];
+};
 
 type Datum = number | { valueOf(): number };
 const PieChart: React.FC<PieChartTypes> = ({
@@ -38,15 +46,6 @@ const PieChart: React.FC<PieChartTypes> = ({
     const colorArr = [
       'green',
       'red',
-      '#377eb8',
-      '#984ea3',
-      '#e41a1c',
-      '#0000ff',
-      '#F0FFF0',
-      '#C0C0C0',
-      '#DAA520',
-      '#FFFF00',
-      '#ADFF2F',
     ];
 
     const labelArray = labelArr || [];
@@ -61,7 +60,7 @@ const PieChart: React.FC<PieChartTypes> = ({
       .select('.toolTipContainer')
       .append('div')
       .style('opacity', 0)
-      .attr('class', classes.tooltip);
+      .attr('class', "tooltip");
 
     const showTooltip = function (event: any, d: any) {
       tooltip.transition().duration(200);
@@ -69,12 +68,12 @@ const PieChart: React.FC<PieChartTypes> = ({
         .style('opacity', 1)
         .html('Value: ' + d.value)
         .style('left', event.x + 5 + 'px')
-        .style('top', event.y - 35 + 'px');
+        .style('top', event.y + 420  + 'px');
     };
     const moveTooltip = function (event: any, d: any) {
       tooltip
         .style('left', event.x + 5 + 'px')
-        .style('top', event.y - 35 + 'px');
+        .style('top', event.y + 420 + 'px');
     };
     const hideTooltip = function (event: any, d: any) {
       tooltip.transition().duration(200).style('opacity', 0);
@@ -95,7 +94,7 @@ const PieChart: React.FC<PieChartTypes> = ({
       .data(pie(pieDataArray))
       .enter()
       .append('g')
-      .classed(classes.arc, arcStrokeFlag);
+      .classed("arc", arcStrokeFlag);
 
     arcs
       .append('path')
@@ -137,7 +136,7 @@ legend
   return (
     <div className={customClass && customClass}>
       <Tooltip/>
-      {chartTitle && <p className={classes.pieChartTitle}>{chartTitle}</p>}
+      {chartTitle && <p className={"pieChartTitle"}>{chartTitle}</p>}
       <svg ref={svgRef} />
     </div>
   );

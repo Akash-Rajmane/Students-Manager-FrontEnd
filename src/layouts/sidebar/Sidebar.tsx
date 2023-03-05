@@ -31,7 +31,7 @@ const Sidebar = () => {
       </span>
       <nav className={ sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className={"nav-menu-items"}>
-          <div className={"closeIcon"}>
+          <div className={"sb-closeIcon"}>
             <AiFillCloseCircle onClick={showSidebar} />
           </div>
           <div className={"nav-text-container"}>
@@ -40,7 +40,7 @@ const Sidebar = () => {
                 <div key={index} className={item.cName}>
                   <NavLink to={item.path} >
                     {item.icon}
-                    <span className={"spacing"}>{item.title}</span>
+                    <span className={"sb-spacing"}>{item.title}</span>
                   </NavLink>
                 </div>
               );

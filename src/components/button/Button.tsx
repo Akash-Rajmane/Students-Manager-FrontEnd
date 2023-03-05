@@ -1,18 +1,25 @@
 import React from 'react';
-import ButtonTypes from './ButtonTypes';
-import classes from './Button.module.scss';
+import './Button.scss';
+
+type ButtonTypes = {
+  label: string;
+  size?: 'xs' | 'small' | 'medium' | 'large' | 'xlarge';
+  color?: 'greenyellow' |'green' | 'red' | 'blue';
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
+};
 
 const Button: React.FC<ButtonTypes> = ({
   label,
   size,
   color,
   onClick,
-  disabled,
   type,
 }) => {
-  const btnClass = `${classes.customBtn} 
-  ${size==="small"? classes["small"] : size==="large"? classes["large"] : size==="medium"? classes["medium"] : size==="xs"? classes["xs"] : classes["xlarge"]}
-  ${color==="blue"? classes["blue"] : color==="red"?  classes["red"]: color==="green"? classes["green"]: disabled ? classes["disabledBtn"]:classes["greenyellow"] } 
+  const btnClass = `${"customBtn"} 
+  ${size==="small"? "small" : size==="large"? "large" : size==="medium"? "medium" : size==="xs"? "xs" : "xlarge"}
+  ${color==="blue"? "blue" : color==="red"?  "red": color==="green"? "green":"greenyellow"} 
  `;
 
   return (

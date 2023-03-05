@@ -1,7 +1,14 @@
 import React,{useState} from 'react';
-import PerPageTypes from "./PerPageTypes";
-import classes from "./PerPage.module.scss";
+import "./PerPage.scss";
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
+
+type PerPageTypes = {
+  label: string;
+  optionsArr: number[];
+  selected: number;
+  setSelected: React.Dispatch<React.SetStateAction<number>> ;
+  customClass?: string;
+};
 
 
 const PerPage:React.FC<PerPageTypes> = ({ 
@@ -13,17 +20,17 @@ const PerPage:React.FC<PerPageTypes> = ({
 
 const [isActive, setIsAcive] = useState<boolean>(false);
 const perPageContentClass = isActive
-    ? classes.perPageContentOverlay
-    : classes.perPageContentHidden;
+    ? "perPageContentOverlay"
+    : "perPageContentHidden";
 
   return (
     <div className={customClass && customClass}>
-    <div className={classes.perPageContainer}  onClick={(e) => setIsAcive(!isActive)}>
-      <span className={classes.label}>{label}</span>
-      <div className={classes.perPageBox}>
-        <span className={classes.selectedPerPage}>{selected}</span>
+    <div className={"perPageContainer"}  onClick={(e) => setIsAcive(!isActive)}>
+      <span className={"label"}>{label}</span>
+      <div className={"perPageBox"}>
+        <span className={"selectedPerPage"}>{selected}</span>
         <span
-          className={classes.dropIcon}
+          className={"dropIcon"}
           onClick={(e) => {
             setIsAcive(!isActive);
           }}
@@ -42,7 +49,7 @@ const perPageContentClass = isActive
                 setSelected(option);
                 setIsAcive(false);
               }}
-              className={classes.dropDownItem}
+              className={"dropDownItem"}
             >
               {option}
             </div>

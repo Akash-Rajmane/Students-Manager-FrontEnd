@@ -1,18 +1,25 @@
 import { RiBookmark3Fill } from "react-icons/ri";
-import CardTypes from './CardTypes';
-import classes from "./Card.module.scss";
+import "./Card.scss";
 import Button from '../../components/button/Button';
 
+type CardTypes = {
+    name: string;
+    attendance: string | number;
+    rollNumber: string | number;
+    marks: string | number;
+    onEdit: ()=>void;//(e: React.MouseEvent<HTMLButtonElement>) => void;
+    onDelete: ()=>void; // (e: React.MouseEvent<HTMLButtonElement>) => void;
+};
 
 const Card:React.FC<CardTypes> = ({name,rollNumber,attendance,marks,onEdit,onDelete}) => {
   return (
-    <div className={classes.cardClass} >
-        <div className={classes.bookMarkIcon} >
+    <div className={"cardClass"} >
+        <div className={"bookMarkIcon"} >
             <RiBookmark3Fill />
         </div>
-        <div className={classes.cardBody} > 
-            <h2 className={classes.name} >{name}</h2>
-            <div className={classes.cardData} >
+        <div className={"cardBody"} > 
+            <h2 className={"name"} >{name}</h2>
+            <div className={"cardData"} >
                 <span>Roll Number :</span>
                 <span>{rollNumber}</span>
                 
@@ -23,7 +30,7 @@ const Card:React.FC<CardTypes> = ({name,rollNumber,attendance,marks,onEdit,onDel
                 <span>{marks}</span>
             </div>
         </div>
-        <div className={classes.cardFooter}>
+        <div className={"cardFooter"}>
             <Button
                 type={'button'}
                 label={"Edit"}
@@ -41,7 +48,7 @@ const Card:React.FC<CardTypes> = ({name,rollNumber,attendance,marks,onEdit,onDel
                 aria-label={"delete button"}
             />     
         </div>
-        <div className={classes.shapeBottom}></div>
+        <div className={"shapeBottom"}></div>
     </div>
   )
 }
