@@ -15,9 +15,21 @@
   color: white;
   z-index: 2;   
   overflow: hidden;
-  font-size: 64px;
+  font-size: 50px;
   font-family: 'Sriracha', cursive;
   box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
+}
+
+@media only screen and (max-width: 768px) {
+  .header{
+    font-size: 44px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header{
+    font-size: 34px;
+  }
 }
 
 .mainImg {
