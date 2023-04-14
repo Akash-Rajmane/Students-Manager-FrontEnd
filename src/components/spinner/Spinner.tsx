@@ -1,6 +1,6 @@
 import React from 'react';
 import { SpinnerTypes } from './SpinnerTypes';
-import classes from './Spinner.module.css';
+import classes from './Spinner.module.scss';
 
 const Spinner: React.FC<SpinnerTypes> = ({ size, type, customClass }) => {
   return (
@@ -20,16 +20,18 @@ const Spinner: React.FC<SpinnerTypes> = ({ size, type, customClass }) => {
           </div>
         </div>
       ) : (
-        <div className={classes.spin}>
-          <div
-            className={
-              size === 'small'
-                ? classes.circleSmall
-                : size === 'medium'
-                ? classes.circleMed
-                : classes.circleLarge
-            }
-          >
+         <div className={classes.wrapper}>
+          <div className={classes.spin}>
+            <div
+              className={
+                size === 'small'
+                  ? classes.circleSmall
+                  : size === 'medium'
+                  ? classes.circleMed
+                  : classes.circleLarge
+              }
+            >
+            </div>
           </div>
         </div>
       )}
