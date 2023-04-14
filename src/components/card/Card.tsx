@@ -6,15 +6,15 @@ import Button from '../../components/button/Button';
 
 
 
-const Card:React.FC<CardTypes> = ({name,rollNumber,attendance,marks,onEdit,onDelete,styleOverride }) => {
+const Card:React.FC<CardTypes> = ({name,rollNumber,attendance,marks,onEdit,onDelete }) => {
   return (
-    <div className={classes.cardClass} style={styleOverride && styleOverride.cardClass}>
-        <div className={classes.bookMarkIcon} style={styleOverride && styleOverride.bookMarkIcon}>
+    <div className={classes.cardClass} >
+        <div className={classes.bookMarkIcon} >
             <RiBookmark3Fill />
         </div>
-        <div className={classes.cardBody} style={styleOverride && styleOverride.cardBody}> 
-            <h2 className={classes.name} style={styleOverride && styleOverride.name}>{name}</h2>
-            <div className={classes.cardData} style={styleOverride && styleOverride.cardData}>
+        <div className={classes.cardBody} > 
+            <h2 className={classes.name} >{name}</h2>
+            <div className={classes.cardData} >
                 <span>Roll Number :</span>
                 <span>{rollNumber}</span>
                 
@@ -25,7 +25,7 @@ const Card:React.FC<CardTypes> = ({name,rollNumber,attendance,marks,onEdit,onDel
                 <span>{marks}</span>
             </div>
         </div>
-        <div className={classes.cardFooter} style={styleOverride && styleOverride.cardFooter}>
+        <div className={classes.cardFooter} >
             <Button
                 type={'button'}
                 label={<AiFillEdit />}
