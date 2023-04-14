@@ -1,3 +1,9 @@
+.wrapper{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 .spin {
   animation: spin 0.9s linear infinite;
   transform-origin: center;
