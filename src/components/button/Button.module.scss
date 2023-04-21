@@ -60,7 +60,7 @@
   background-color: transparent;
   color: $greenyellow;
   border: 2px solid $greenyellow;
-  
+   transition: all 0.35s ease-in-out;
 }
 
 &.green:hover {
@@ -73,6 +73,7 @@
   background-color: transparent;
   color: $green;
   border: 2px solid $green;
+  transition: all 0.35s ease-in-out;
 }
 
 &.red:hover {
@@ -85,6 +86,7 @@
   background-color: transparent;
   color: $red;
   border: 2px solid $red;
+  transition: all 0.35s ease-in-out;
 }
 
 &.blue:hover {
@@ -97,6 +99,7 @@
   background-color: transparent;
   color: $lightblue;
   border: 2px solid $lightblue;
+  transition: all 0.35s ease-in-out;
 }
 
 
