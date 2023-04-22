@@ -13,6 +13,7 @@ input {
   outline: none;
   height: 25px;
   font: inherit;
+  transition: all 0.3s ease-in;
   &.sm{
     width: 230px;
   }
@@ -28,6 +29,10 @@ input {
 }
 
 input:focus {
+  border: 2px solid $greenyellow;
+}
+
+input:hover {
   border: 2px solid $greenyellow;
 }
 
