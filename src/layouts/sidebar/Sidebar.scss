@@ -28,13 +28,13 @@
   position: fixed;
   top: 0;
   left: -100%;
-  transition: 700ms;
+  transition: all 900ms ease;
   z-index: 12;
 }
 
 .nav-menu.active {
   left: 0;
-  transition: 350ms;
+  transition: all 650ms ease;
 }
 
 .nav-text-container {
