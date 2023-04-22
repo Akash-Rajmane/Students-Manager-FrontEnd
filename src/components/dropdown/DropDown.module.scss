@@ -51,10 +51,13 @@
   box-shadow: 3px 3px 10px 6px #0000000f;
   font-weight: 500;
   z-index: 10;
+  transition: all .3s ease;
+  opacity: 1;
 }
 
 .dropDownContentHidden {
  display: none;
+ opacity: 0;
 }
 
 .dropDownItem {
