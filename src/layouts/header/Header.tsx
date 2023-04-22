@@ -21,4 +21,8 @@ const Header = () => {
   )
 };
 
+<<<<<<< HEAD
 export default Header;
+=======
+export default Header;
+>>>>>>> 2aedd7c (improvements)
