@@ -17,3 +17,5 @@
 ### It is a progressive, responsive web app.
 
 ## Hosted Link: https://students-manager.netlify.app
+
+### If you liked this project don't forget to give it a star.
