@@ -21,6 +21,7 @@ const Spinner: React.FC<SpinnerTypes> = ({ size, type, customClass }) => {
         </div>
       ) : (
          <div className={classes.wrapper}>
+          <img fetchpriority='high' src="https://ik.imagekit.io/Akash/people-16x16.png?updatedAt=1683998397233" className={classes.logo}/>
           <div className={classes.spin}>
             <div
               className={
