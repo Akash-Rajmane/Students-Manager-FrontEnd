@@ -5,10 +5,4 @@ declare module 'react' {
     rel?: string;
     fetchpriority?: string;
   }
-<<<<<<< HEAD
 };
-=======
-};
-
-
->>>>>>> 2aedd7c (improvements)
