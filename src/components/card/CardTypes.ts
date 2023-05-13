@@ -7,20 +7,6 @@ type CardTypes = {
     marks: string | number;
     onEdit: ()=>void;//(e: React.MouseEvent<HTMLButtonElement>) => void;
     onDelete: ()=>void; // (e: React.MouseEvent<HTMLButtonElement>) => void;
-<<<<<<< HEAD
 };
   
 export default CardTypes;
-=======
-    styleOverride?: {
-        cardClass?: CSSProperties;
-        bookMarkIcon?: CSSProperties;
-        cardBody?: CSSProperties;
-        name?: CSSProperties;
-        cardData?: CSSProperties;
-        cardFooter?: CSSProperties;
-    }
-};
-  
-export default CardTypes;
->>>>>>> 2aedd7c (improvements)
