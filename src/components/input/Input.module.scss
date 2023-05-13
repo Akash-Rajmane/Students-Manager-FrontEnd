@@ -13,10 +13,7 @@ input {
   outline: none;
   height: 25px;
   font: inherit;
-<<<<<<< HEAD
-  transition: all 0.3s ease-in;
-=======
->>>>>>> 2aedd7c (improvements)
+  transition: all 0.3s ease-in-out;
   &.sm{
     width: 230px;
   }
@@ -35,13 +32,6 @@ input:focus {
   border: 2px solid $greenyellow;
 }
 
-<<<<<<< HEAD
-input:hover {
-  border: 2px solid $greenyellow;
-}
-
-=======
->>>>>>> 2aedd7c (improvements)
 input:disabled {
   background: $disabledbkg;
   cursor: not-allowed;
