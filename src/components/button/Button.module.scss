@@ -47,7 +47,6 @@
   background-color: $greenyellow;
   color: $txtcolor;
   cursor: pointer;
-  animation: ripple 2s linear;
 }
 
 &.greenyellow:hover {
@@ -60,7 +59,7 @@
   background-color: transparent;
   color: $greenyellow;
   border: 2px solid $greenyellow;
-   transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 &.green:hover {

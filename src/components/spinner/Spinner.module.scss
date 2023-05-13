@@ -4,6 +4,13 @@
   align-items: center;
 }
 
+.logo{
+  position: absolute;
+  margin:0 calc(50% - 8px);
+  z-index: 15;
+}
+
+
 .spin {
   animation: spin 0.9s linear infinite;
   transform-origin: center;
@@ -38,6 +45,7 @@
   width: 10px;
   height: 10px;
   animation: spin 2s linear infinite;
+  //background-image: url("/people-16x16.png");
 }
 
 .circleMed {
@@ -47,6 +55,7 @@
   width: 15px;
   height: 15px;
   animation: spin 2s linear infinite;
+  //background-image: url("/people-16x16.png");
 }
 
 .circleLarge {
@@ -56,5 +65,7 @@
   width: 30px;
   height: 30px;
   animation: spin 2s linear infinite;
+  // background-image: url("/people-32x32.png");
+  // background-repeat: no-repeat;
 }
 

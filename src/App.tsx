@@ -19,13 +19,13 @@ const Edit = React.lazy(() => import('./pages/edit/Edit'));
 const ScrollToTop = React.lazy(() => import('./components/scrolltotop/ScrollToTop'));
 
 function App() {
-  
+
   return (
     <Suspense>
     <ScrollToTop> 
       <Header />
       <Sidebar />
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/edit/:rollNumber" element={<Edit/>} />
@@ -33,7 +33,7 @@ function App() {
         <Route path="/stats" element={<Stats />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
-     
+
       <Footer /> 
     </ScrollToTop>
     </Suspense>
