@@ -3,17 +3,18 @@ import classes from './List.module.scss';
 import useTitle from '../../hooks/useTitle';
 import Spinner from '../../components/spinner/Spinner';
 import useFetch from '../../hooks/useFetch';
-//import Card from '../../components/card/Card';
-//import Input from '../../components/input/Input';
+import Card from '../../components/card/Card';
+import Input from '../../components/input/Input';
+import Modal from '../../components/modal/Modal';
+import Button from '../../components/button/Button';
 import { useNavigate } from 'react-router-dom';
-//import Modal from '../../components/modal/Modal';
-//import Button from '../../components/button/Button';
+
 import { IoPersonRemove } from 'react-icons/io5';
 
-const Card = React.lazy(() => import('../../components/card/Card'));
-const Button = React.lazy(() => import('../../components/button/Button'));
-const Modal = React.lazy(() => import('../../components/modal/Modal'));
-const Input = React.lazy(() => import('../../components/input/Input'));
+// const Card = React.lazy(() => import('../../components/card/Card'));
+// const Button = React.lazy(() => import('../../components/button/Button'));
+// const Modal = React.lazy(() => import('../../components/modal/Modal'));
+// const Input = React.lazy(() => import('../../components/input/Input'));
 
 const Btn = React.memo(Button);
 
@@ -64,10 +65,10 @@ const List = () => {
     if(res.status === 422 || !deletedData) {
       alert("Something went wrong!");
     }else {
-      let promise = new Promise(resolve=>{ 
-        resolve(setShow(false))
-      })
-      promise.then(()=>alert("All Students deleted successfully!"))
+      
+      setShow(false);
+      setTimeout(()=>alert("All students deleted succcessfully!"),500)
+     
     }
 
     setDataChange(!dataChange);
@@ -89,10 +90,12 @@ const List = () => {
     if (res.status === 422 || !deletedData) {
       alert("Something went wrong!");
     } else {
-      let promise = new Promise(resolve=>{ 
-          resolve(setShow(false))
-        })
-      promise.then(()=>alert("Student deleted successfully!"))
+      
+        setShow(false);
+        setTimeout(()=>{
+            alert("Student deleted successfully!")
+        },500);
+       
     }
     setDataChange(!dataChange);
     
