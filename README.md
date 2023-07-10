@@ -2,7 +2,7 @@
 
 ## Technical Stack Used: ReactJS, Typescript,D3JS, HTML, SCSS, React- Router-Dom, NodeJS, ExpressJS, MongoDB
 
-## Features;
+## Features:
 
 ### Add, Delete Student, Delete All Students
 
